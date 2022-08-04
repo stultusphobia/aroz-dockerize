@@ -1,0 +1,19 @@
+version: "2.4"
+services:
+  arozos:
+    build: .
+    volumes:
+      - files:/app/files
+      - system:/app/system
+      - systemAO_vendor:/app/web/SystemAO/vendor
+    ports:
+      - "8888:80"
+      - "2121:21"
+    environment:
+      - USER_ID=1000
+      - GROUP_ID=1001
+
+volumes:
+  system:
+  files:
+  systemAO_vendor:
