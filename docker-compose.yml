@@ -1,17 +1,18 @@
 version: "2.4"
 services:
   arozos:
-    build: .
+    image: stultusphobia/aroz-dockerize
     volumes:
       - files:/app/files
       - system:/app/system
       - systemAO_vendor:/app/web/SystemAO/vendor
+      # - your/host/folder:/mount/point/in/arozos
     ports:
-      - "8888:80"
-      - "2121:21"
+      - "8080:8080"
     environment:
       - USER_ID=1000
-      - GROUP_ID=1001
+      - GROUP_ID=100
+    restart: unless-stopped
 
 volumes:
   system:
