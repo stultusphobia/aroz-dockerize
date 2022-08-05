@@ -2,6 +2,8 @@
 
 set -x
 
+tar -xf ./web.tar.gz
+
 if [ $GROUP_ID ] && [ $USER_ID ]
 then
     echo "Setting permissions"
