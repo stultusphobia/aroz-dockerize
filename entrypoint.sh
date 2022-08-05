@@ -2,8 +2,6 @@
 
 set -xe
 
-tar -xf ./web.tar.gz
-
 GROUP=$(getent group ${GROUP_ID} | cut -d: -f1)
 
 if [ $GROUP_ID ] && [ $USER_ID ]; then

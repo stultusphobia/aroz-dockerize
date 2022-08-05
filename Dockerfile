@@ -5,6 +5,8 @@ WORKDIR /arozos/src
 RUN git fetch && git checkout v1.123
 RUN make web
 RUN go build -o './dist/arozos' -trimpath
+WORKDIR /arozos/src/dist
+RUN tar -xf ./web.tar.gz && rm web.tar.gz
 
 FROM alpine
 RUN apk --no-cache add util-linux ffmpeg su-exec
